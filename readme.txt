@@ -1,5 +1,5 @@
 === OH Add Script to Individual Pages Header Footer  ===
-Contributors: ohav
+Contributors: orenhav
 Tags: javascript,js, re-marketing code, header, footer
 Requires at least: 3.2
 Tested up to: 3.8
