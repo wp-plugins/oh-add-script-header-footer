@@ -32,7 +32,7 @@ and much more...
 
 
 == Screenshots ==
-
+1. edit page meta box
 
 
 == Changelog ==
