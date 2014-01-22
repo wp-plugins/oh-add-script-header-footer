@@ -16,7 +16,7 @@
 // add google analytics to footer
 function oh_add_script() {
 	global $post;
-	$output = get_post_meta($post->ID,'_oh_add_script',true);
+	$output = get_post_meta($post->ID,'_oh_add_script_header',true);
 	echo stripslashes($output);
 	 
 }
