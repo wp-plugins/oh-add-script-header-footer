@@ -3,7 +3,7 @@ Contributors: orenhav
 Tags: javascript,js, re-marketing code, header, footer
 Requires at least: 3.2
 Tested up to: 3.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ and much more...
 
 = 1.1 =
 * resolve header script not being echo to the page
+
+= 1.2 =
+* resolve issue with WordPress Version 3.7
 
 == Upgrade Notice ==
 

@@ -3,7 +3,7 @@
  * Plugin Name: OH Add Script Header Footer
  * Plugin URI: http://ohav.co.il/plugin
  * Description:  create a simple way to add js code to individual page post or custom post type header and footer, in this way it enable you to add google re-marketing code to individual pages
- * Version:1.1
+ * Version:1.2
  * Author: orenhav
  * Author URI: http://ohav.co.il
  *
@@ -78,7 +78,7 @@ function oh_script_inner_custom_box( $post ) {
        _e("add script to be added to the footer of the page", 'oh_add_script_footer' );
   echo '</label> ';
   echo '<textarea  style="display: block;width: 90%;min-height: 150px;" id="oh_add_script_footer"
-                name="oh_add_script"   size="25" >'.$value_footer.'</textarea>';
+                name="oh_add_script_footer"   size="25" >'.$value_footer.'</textarea>';
 
   
   
