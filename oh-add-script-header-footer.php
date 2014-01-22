@@ -4,7 +4,7 @@
  * Plugin URI: http://ohav.co.il/plugin
  * Description:  create a simple way to add js code to individual page post or custom post type header and footer, in this way it enable you to add google re-marketing code to individual pages
  * Version:1.2
- * Author: orenhav
+ * Author: orenhav, rel78
  * Author URI: http://ohav.co.il
  *
  * This program is distributed in the hope that it will be useful,
