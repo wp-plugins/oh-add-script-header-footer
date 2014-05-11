@@ -79,7 +79,9 @@ function oh_script_inner_custom_box( $post ) {
   echo '</label> ';
   echo '<textarea  style="display: block;width: 90%;min-height: 150px;" id="oh_add_script_footer"
                 name="oh_add_script_footer"   size="25" >'.$value_footer.'</textarea>';
-
+  echo '<p>';
+    _e("You should put the code with the script tags<code> &gt;script type='text/javascript'&lt; the code &gt;/script&lt;</code>", 'oh_add_script_footer' );
+    echo '</p> ';
   
   
   }
