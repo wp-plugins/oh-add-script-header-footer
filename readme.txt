@@ -2,8 +2,8 @@
 Contributors: orenhav, rel78
 Tags: javascript,js, re-marketing code, header, footer
 Requires at least: 3.2
-Tested up to: 3.8
-Stable tag: 1.2
+Tested up to: 3.9
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,10 @@ Create a simple way to add javascript code to individual page post or custom pos
 for example: add conversion code to thank you pages
 add google re-marketing code to individual pages
 and much more...
+
+usage:
+You need to paste the code with the script tag, for example:
+<script type="text/javascript">   you js code </script>
 
 
 
@@ -45,6 +49,9 @@ and much more...
 
 = 1.2 =
 * resolve issue with WordPress Version 3.7
+
+= 1.2.1 =
+* added usage description
 
 == Upgrade Notice ==
 
