@@ -16,9 +16,7 @@ for example: add conversion code to thank you pages
 add google re-marketing code to individual pages
 and much more...
 
-usage:
-You need to paste the code with the script tag, for example:
-<pre>&lt;script type="text/javascript"&gt;   your js code &lt;/script&gt;</pre>
+
 
 
 
