@@ -18,7 +18,7 @@ and much more...
 
 usage:
 You need to paste the code with the script tag, for example:
-<pre><script type="text/javascript">   your js code </script></pre>
+<pre>&lt;script type="text/javascript"&gt;   your js code &lt;/script&gt;</pre>
 
 
 
