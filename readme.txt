@@ -11,7 +11,7 @@ Simple plugin to add script to header and footer for individual pages & posts
 
 == Description ==
 
-Create a simple way to add javascript code to individual page post or custom post type header and footer,
+Create a simple way to add javascript code and or CSS code to individual page post or custom post type header and footer,
 for example: add conversion code to thank you pages
 add google re-marketing code to individual pages
 and much more...
