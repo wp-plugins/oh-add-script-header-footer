@@ -7,7 +7,7 @@ Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple plugin to add script to header and footer for individual pages & posts
+Simple plugin to add js script or css to header and footer for individual pages & posts
 
 == Description ==
 
@@ -16,8 +16,10 @@ for example: add conversion code to thank you pages
 add google re-marketing code to individual pages
 and much more...
 
+You have the option to add one or more JS or CSS to each page,
+simply copy your css or js to the text box and save it
 
-
+if you need help - feel free to contact us
 
 
 == Installation ==
