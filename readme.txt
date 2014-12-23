@@ -1,25 +1,30 @@
 === OH Add Script to Individual Pages Header Footer  ===
 Contributors: orenhav, rel78
 Tags: javascript,js, re-marketing code, header, footer
-Requires at least: 3.2
-Tested up to: 3.9
-Stable tag: 1.2.1
+Requires at least: 3.5
+Tested up to: 4.5
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple plugin to add js script or css to header and footer for individual pages & posts
+
+Simple plugin to add script to header and footer for individual pages & posts
+
 
 == Description ==
 
-Create a simple way to add javascript code and or CSS code to individual page post or custom post type header and footer,
+Create a simple way to add javascript code to individual page post or custom post type header and footer,
 for example: add conversion code to thank you pages
 add google re-marketing code to individual pages
 and much more...
+added in version 1.3 the optin to add script  \ style to all pages not only individual pages,
+ this will allow you to add Google remarketing code to the entire site or Google Analytics
+ to use it goto "settings" - "Header Footer Settings"
 
-You have the option to add one or more JS or CSS to each page,
-simply copy your css or js to the text box and save it
+usage:
+You need to paste the code with the script tag, for example:
+<script type="text/javascript">   you js code </script>
 
-if you need help - feel free to contact us
 
 
 == Installation ==
@@ -52,6 +57,9 @@ if you need help - feel free to contact us
 
 = 1.2.1 =
 * added usage description
+
+= 1.3 =
+* add site wide header footer script (e.g. for Google analytics or remarketing code)
 
 == Upgrade Notice ==
 
