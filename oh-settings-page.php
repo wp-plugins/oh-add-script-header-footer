@@ -156,7 +156,7 @@ class OHHeaderFooterSetting
             '<textarea style="margin: 0px; width: 730px; height: 211px;" id="oh_footer" name="sogo_header_footer[oh_footer]"   >%s</textarea>',
             isset( $this->options['oh_footer'] ) ? esc_attr( $this->options['oh_footer']) : ''
         );
-        echo "<a target='_blank' href='http://sogo.co.il/'><img src='//sogo.co.il/WPADS/sogo-header-footer.png' alt='Sogo Web Development'/></a>";
+        echo "<br/><a target='_blank' href='http://sogo.co.il/'><img src='//sogo.co.il/WPADS/sogo-header-footer.png' alt='Sogo Web Development'/></a>";
     }
 }
 
