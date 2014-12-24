@@ -1,29 +1,38 @@
 <?php
 /**
  * Plugin Name: OH Add Script Header Footer
- * Plugin URI: http://ohav.co.il/plugin
+ * Plugin URI: http://sogo.co.il
  * Description:  create a simple way to add js code to individual page post or custom post type header and footer, in this way it enable you to add google re-marketing code to individual pages
- * Version:1.2.1
- * Author: orenhav, rel78
- * Author URI: http://ohav.co.il
+ * Version:1.3
+ * Author: orenhav
+ * Author URI: http://sogo.co.il
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-
+require_once  plugin_dir_path( __FILE__ ) . "oh-settings-page.php";
 // add google analytics to footer
 function oh_add_script() {
     global $post;
     $output = get_post_meta($post->ID,'_oh_add_script_header',true);
     echo stripslashes($output);
+    $sogo_header_footer =  get_option('sogo_header_footer');
+    if(isset($sogo_header_footer['oh_header'])){
+        echo stripslashes($sogo_header_footer['oh_header']);
+    }
 
 }
 function oh_add_script_footer() {
     global $post;
     $output = get_post_meta($post->ID,'_oh_add_script_footer',true);
     echo stripslashes($output);
+    $sogo_header_footer =  get_option('sogo_header_footer');
+    if(isset($sogo_header_footer['oh_footer'])){
+        echo stripslashes($sogo_header_footer['oh_footer']);
+    }
+
 
 }
 add_action('wp_head', 'oh_add_script');
@@ -70,12 +79,12 @@ function oh_script_inner_custom_box( $post ) {
     $value = get_post_meta( $post->ID, '_oh_add_script_header',  true );
     $value_footer = get_post_meta( $post->ID, '_oh_add_script_footer',  true );
     echo '<label for="oh_add_script_header">';
-    _e("add script to be added to the header of the page", 'oh_add_script' );
+    _e("add script / style to be added to the header of the page", 'oh_add_script' );
     echo '</label> ';
     echo '<textarea  style="display: block;width: 90%;min-height: 150px;" id="oh_add_script_header"
             name="oh_add_script_header"   size="25" >'.$value.'</textarea>';
     echo '<label for="oh_add_script_footer">';
-    _e("add script to be added to the footer of the page", 'oh_add_script_footer' );
+    _e("add script to be added to the footer of the page before the </body> (e.g Google Remarketing / Google Conversion )", 'oh_add_script_footer' );
     echo '</label> ';
     echo '<textarea  style="display: block;width: 90%;min-height: 150px;" id="oh_add_script_footer"
                 name="oh_add_script_footer"   size="25" >'.$value_footer.'</textarea>';
