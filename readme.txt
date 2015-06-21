@@ -21,10 +21,13 @@ added in version 1.3 the optin to add script  \ style to all pages not only indi
  this will allow you to add Google remarketing code to the entire site or Google Analytics
  to use it goto "settings" - "Header Footer Settings"
 
- New Features (version 1.4)
-1.we support now exclude individual pages form printing the header and footer scripts, this is supported by 2 checkboxes in each page\post
+ New Features (version 1.4):
+
+1. we support now exclude individual pages form printing the header and footer scripts, this is supported by 2 checkboxes in each page\post
  buy check it the script will not be display on this page
+
 2. we added support to limit the script only for certain post type \ page
+
 
 if you like it \ use it - please rate us.
 
