@@ -3,7 +3,7 @@ Contributors: orenhav, rel78
 Tags: javascript,js, re-marketing code, header, footer
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,7 +59,14 @@ You need to paste the code with the script tag, for example:
 * added usage description
 
 = 1.3 =
-* add site wide header footer script (e.g. for Google analytics or remarketing code)
+* add site wide header footer script (e.g. for Google analytics or remarking code)
+
+= 1.3 =
+* add 2 new features:
+1. option to limit the script per post type - we added a checkbox in the option which give you the ability to select on
+which page \post \custom post type the header or footer script will be printed.
+2. option to exclude a  page \post \custom post type from header and or footer script. yo will find 2 new checkbox on each page
+which enable you to exclude the script from this individual page
 
 == Upgrade Notice ==
 

@@ -4,38 +4,21 @@ class OHHeaderFooterSetting
     /**
      * Holds the values to be used in the fields callbacks
      */
-    private $options;
 
     /**
      * Start up
      */
     public function __construct()
     {
+
         add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
         add_action( 'admin_init', array( $this, 'page_init' ) );
-        add_action( 'wp_head', array( $this, 'oh_main_header' ) );
-        add_action( 'wp_footer', array( $this, 'oh_main_footer' ) );
+
 
     }
 
-    /**
-     * Echo Header code
-     */
-    public function oh_main_header()
-    {
 
-        $output = isset( $this->options['oh_header'] ) ? esc_attr( $this->options['oh_header']) : 'no val';
-        echo stripslashes($output);
-    }
 
-    /**
-     * Echo Footer code
-     */
-    public function oh_main_footer()
-    {
-        $output = isset( $this->options['oh_footer'] ) ? esc_attr( $this->options['oh_footer']) : 'no val';
-        echo stripslashes($output);
-    }
 
     /**
      * Add options page
@@ -92,11 +75,24 @@ class OHHeaderFooterSetting
             array( $this, 'print_section_info' ), // Callback
             'my-setting-admin' // Page
         );
-
+        add_settings_field(
+            'oh_posttype', // ID
+            'limit Google Analytics to:', // Title
+            array( $this, 'oh_posttype_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_section_id' // Section
+        );
         add_settings_field(
             'oh_header_script', // ID
             'Google Analytics', // Title
             array( $this, 'oh_header_callback' ), // Callback
+            'my-setting-admin', // Page
+            'setting_section_id' // Section
+        );
+        add_settings_field(
+            'oh_posttype_footer', // ID
+            'Limit Google Remarketing to:', // Title
+            array( $this, 'oh_posttype_footer_callback' ), // Callback
             'my-setting-admin', // Page
             'setting_section_id' // Section
         );
@@ -124,6 +120,10 @@ class OHHeaderFooterSetting
             $new_input['oh_header'] =  $input['oh_header'] ;
         if( isset( $input['oh_footer'] ) )
             $new_input['oh_footer'] =  $input['oh_footer'] ;
+        if( isset( $input['oh_posttype'] ) )
+            $new_input['oh_posttype'] =  $input['oh_posttype'] ;
+        if( isset( $input['oh_posttype_footer'] ) )
+            $new_input['oh_posttype_footer'] =  $input['oh_posttype_footer'] ;
 
         return $new_input;
     }
@@ -150,6 +150,50 @@ class OHHeaderFooterSetting
     /**
      * Get the settings option array and print one of its values
      */
+    public function oh_posttype_callback()
+    {
+        $post_types = get_post_types();
+        $selected = isset( $this->options['oh_posttype'] ) ?   $this->options['oh_posttype']  : array();
+        foreach ( $post_types  as $key=>$post_type ) {
+            $checked  = (in_array($post_type, $selected)) ? 'checked="checked"' : '';
+            echo '<input value="'.$post_type.'" type="checkbox" name="sogo_header_footer[oh_posttype][]" '.$checked.' id="'.$key.'"/>
+                <label for="'.$key.'">'.$post_type.'</label>';
+        }
+    }
+    /**
+     * Get the settings option array and print one of its values
+     */
+    public function oh_posttype_footer_callback()
+    {
+
+        $selected = isset( $this->options['oh_posttype_footer'] ) ?   $this->options['oh_posttype_footer']  : array();
+
+        $post_types = get_post_types();
+
+        foreach ( $post_types  as $key=>$post_type ) {
+            $checked  = (in_array($post_type, $selected)) ? 'checked="checked"' : '';
+            echo '<input value="'.$post_type.'" type="checkbox" name="sogo_header_footer[oh_posttype_footer][]"
+            '.$checked.' id="footer_'.$key.'"/>
+                <label for="footer_'.$key.'">'.$post_type.'</label>';
+        }
+    }
+
+    private function get_post_types(){
+        $args = array(
+            'public'   => true,
+            '_builtin' => false
+        );
+
+        $output = 'names'; // names or objects, note names is the default
+        $operator = 'and'; // 'and' or 'or'
+        $post_types = get_post_types( $args, $output, $operator );
+        $post_types[] ='post';
+        $post_types[] ='page';
+        return $post_types;
+    }
+    /**
+     * Get the settings option array and print one of its values
+     */
     public function oh_footer_callback()
     {
         printf(
@@ -158,6 +202,8 @@ class OHHeaderFooterSetting
         );
         echo "<br/><a target='_blank' href='http://sogo.co.il/'><img src='//sogo.co.il/WPADS/sogo-header-footer.png' alt='Sogo Web Development'/></a>";
     }
+
+
 }
 
 if( is_admin() )
