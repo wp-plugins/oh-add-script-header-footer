@@ -16,12 +16,14 @@ require_once  plugin_dir_path( __FILE__ ) . "oh-settings-page.php";
 // add google analytics to footer
 function oh_add_script() {
 	global $post;
-	$output = get_post_meta($post->ID,'_oh_add_script_header',true);
-	echo stripslashes($output);
-    if(oh_show_me_on('oh_posttype') &&  get_post_meta($post->ID,'_oh_add_script_header_hide',true) != 'on' ){
-        $sogo_header_footer =  get_option('sogo_header_footer');
-        if(isset($sogo_header_footer['oh_header'])){
-            echo stripslashes($sogo_header_footer['oh_header']);
+    if(isset($post->ID)) {
+        $output = get_post_meta($post->ID, '_oh_add_script_header', true);
+        echo stripslashes($output);
+        if(oh_show_me_on('oh_posttype') && get_post_meta($post->ID, '_oh_add_script_header_hide', true) != 'on') {
+            $sogo_header_footer = get_option('sogo_header_footer');
+            if(isset($sogo_header_footer['oh_header'])) {
+                echo stripslashes($sogo_header_footer['oh_header']);
+            }
         }
     }
 
